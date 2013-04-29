@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1347727551 source:f:\code\zju\3010_e\main.cpp
-	<iostream>
-	<iomanip>
-	<cstring>
-	<stdio.h>
-

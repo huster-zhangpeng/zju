@@ -1,8 +1,0 @@
-# depslib dependency file v1.0
-1345457861 source:f:\oj\zju\2406\main.cpp
-	<iostream>
-	<vector>
-	<cstring>
-	<algorithm>
-	<stdio.h>
-
