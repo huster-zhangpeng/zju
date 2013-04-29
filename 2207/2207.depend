@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1347350071 source:f:\code\zju\2207\main.cpp
+	<iostream>
+	<algorithm>
+	<limits.h>
+	<cstring>
+	<stdio.h>
+
