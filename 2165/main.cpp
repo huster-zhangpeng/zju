@@ -1,5 +1,7 @@
 #include <iostream>
 #include <stdio.h>
+#include <cstring>
+#define LOCAL
 
 using namespace std;
 
@@ -9,12 +11,15 @@ struct {
 int top;
 
 char room[22][22];
+bool visited[22][22];
 int directX[4] = {0, 1, 0, -1};
 int directY[4] = {1, 0, -1, 0};
 
 int main(){
     int W, H, x, y, sum;
-//    freopen("input.txt", "r", stdin);
+#ifdef LOCAL
+    freopen("input.txt", "r", stdin);
+#endif
     while(cin>>W>>H && W && H){
         for(int i = 0; i < W+2; i++){
             room[0][i] = room[H+1][i] = '#';
@@ -34,16 +39,17 @@ int main(){
 
         top = 1;
         sum = 0;
+        memset(visited, 0, sizeof(visited));
         while(top > 0){
             top --;
             x = stack[top].x;
             y = stack[top].y;
-            if(room[x][y] == '.'){
-                sum++;
-                room[x][y] = '*';
-            } else continue;
+            if(visited[x][y])
+                continue;
+            visited[x][y] = true;
+            sum++;
             for(int i = 0; i < 4; i++){
-                if(room[ x+directX[i] ][ y+directY[i] ] == '.'){
+                if(room[ x+directX[i] ][ y+directY[i] ] == '.' && !visited[x+directX[i]][y+directY[i]]){
                     stack[top].x = x + directX[i];
                     stack[top].y = y + directY[i];
                     top ++;
@@ -52,4 +58,5 @@ int main(){
         }
         cout<<sum<<endl;
     }
+    return 0;
 }
