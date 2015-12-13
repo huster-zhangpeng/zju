@@ -1,7 +1,0 @@
-# depslib dependency file v1.0
-1345445356 source:f:\oj\zju\2416\main.cpp
-	<iostream>
-	<cstring>
-	<string>
-	<stdio.h>
-
